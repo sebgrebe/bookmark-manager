@@ -1,11 +1,18 @@
-# Bookmark Manager
+# bookmark-manager
 
-## User stories
-```
-As a user,
-I can see a list of bookmarks.
-A bookmark has title, a description, and a link to the bookmarked URL
+# User Stories
 
-```
-![alt text](./user_story1_solution.jpg)
-(This is taken from the walkthrough)
+First user story to show a list of bookmarks:
+
+As a user
+I want to view a list of bookmarks
+So that I can access saved websites easily
+
+nouns           verbs
+
+user            
+bookmarks       view
+
+# Domain model
+
+tbc
