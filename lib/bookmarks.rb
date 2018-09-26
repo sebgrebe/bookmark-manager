@@ -2,7 +2,11 @@ require 'pg'
 
 class Bookmarks
 
-  @conn = PG.connect( dbname: 'bookmark_manager' )
+  DATABASE_DEV = 'bookmark_manager'
+  DATABASE_TEST = 'bookmark_manager_test'
+  @db_name = ENV['RACK_ENV'] == 'test' ? DATABASE_TEST : DATABASE_DEV
+
+  @conn = PG.connect( dbname: @db_name )
 
   def self.all
     retrieve_urls
@@ -19,7 +23,7 @@ class Bookmarks
   end
 
   def add_url()
-    @conn.exec( "INSERT INTO bookmarks(url) VALUES(#{url})") 
+    @conn.exec( "INSERT INTO bookmarks(url) VALUES(#{url})")
   end
 
   def self.formater(data)
