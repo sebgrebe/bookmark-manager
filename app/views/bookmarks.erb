@@ -1,5 +1,15 @@
-<ul>
-    <% @bookmarks.each do |bookmarks| %>
-    <li><%= bookmarks %></li>
+<div>
+<% if flash[:warning] %>
+  <%= flash[:warning] %>
+  <a href="/bookmarks" class="close">&times;</a>
+<% end %>
+
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+      <li><%= bookmark %></li>
     <% end %>
-</ul>
+  </ul>
+  <form action="/create" method='get'>
+    <input type="submit" value="Add link">
+  </form>
+</div>

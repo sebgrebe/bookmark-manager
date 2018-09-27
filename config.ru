@@ -1,3 +1,3 @@
-require_relative "./app/bookmark_web"
+require_relative './app/bookmark_app'
 
-run BookmarkManager
+run BookmarkApp
