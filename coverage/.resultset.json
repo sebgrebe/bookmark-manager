@@ -27,6 +27,22 @@
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -73,6 +89,35 @@
         1,
         1,
         null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/seb/makers/pairing/bookmark-manager/spec/feature/update_bookmark_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/seb/makers/pairing/bookmark-manager/spec/feature/viewing_bookmarks_spec.rb": [
@@ -97,6 +142,6 @@
         null
       ]
     },
-    "timestamp": 1538128185
+    "timestamp": 1538132262
   }
 }

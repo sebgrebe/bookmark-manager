@@ -14,6 +14,8 @@ class BookmarkApp < Sinatra::Base
 
   get '/bookmarks' do
     @bookmarks = Bookmark.all
+    p '/bookmarks'
+    p @bookmarks
     erb(:bookmarks)
   end
 
@@ -27,6 +29,20 @@ class BookmarkApp < Sinatra::Base
     else
       flash[:warning] = 'This is not a valid URL'
     end
+    redirect '/bookmarks'
+  end
+
+  post '/delete/:id' do
+    Bookmark.delete(params['id'])
+    redirect '/bookmarks'
+  end
+
+  get '/update/:id' do
+    erb :update
+  end
+
+  post '/update/:id' do
+    Bookmark.update(params['id'], params[:url], params[:title])
     redirect '/bookmarks'
   end
 

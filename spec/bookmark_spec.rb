@@ -20,6 +20,22 @@ describe Bookmark do
     end
   end
 
+  describe '.delete' do
+    it 'deletes a bookmark' do
+      Bookmark.delete('1')
+      bookmarks = Bookmark.all
+      expect(bookmarks).to_not include({id: "1", url: 'http://www.makersacademy.com', title: 'Makers'})
+    end
+  end
+
+  describe '.update' do
+    it 'update a bookmark' do
+      Bookmark.update('2', 'www.google.com', 'NewGoogle')
+      bookmarks = Bookmark.all
+      expect(bookmarks).to include({id: "2", url: 'www.google.com', title: 'NewGoogle'})
+    end
+  end
+
   describe '.valid?' do
     it 'returns false if a bookmark is not valid' do
       expect(Bookmark.valid?('This is not a valid url')).to eq(false)

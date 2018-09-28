@@ -8,8 +8,11 @@
     <% @bookmarks.each do |bookmark| %>
       <li>
         <a href=<%= bookmark[:url] %> > <%= bookmark[:title] %></a>
-        <form action='/delete' method='post'>
-          <input type="submit" value="Delete" name=<%= bookmark[:id] %>>
+        <form action='/delete/<%= bookmark[:id] %>' method='post'>
+          <input type="submit" value="Delete" id='delete_<%= bookmark[:id] %>'>
+        </form>
+        <form action='/update/<%= bookmark[:id] %>' method='get'>
+          <input type="submit" value="Update" id='update_<%= bookmark[:id] %>'>
         </form>
       </li>
     <% end %>

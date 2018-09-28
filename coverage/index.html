@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-28T10:49:45+01:00">2018-09-28T10:49:45+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-28T11:57:42+01:00">2018-09-28T11:57:42+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>4</b> files in total.
-    <b>62</b> relevant lines. 
-    <span class="green"><b>62</b> lines covered</span> and
+    <b>5</b> files in total.
+    <b>90</b> relevant lines. 
+    <span class="green"><b>90</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#10eae22d4926826393a056c5fcc72a54fcb9f423" class="src_link" title="spec/bookmark_spec.rb">spec/bookmark_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>29</td>
-        <td>17</td>
-        <td>17</td>
+        <td>45</td>
+        <td>27</td>
+        <td>27</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -73,9 +73,19 @@
       <tr>
         <td class="strong"><a href="#e1e5af9890fe8d28d3bcf196c1251e0a5e1eb516" class="src_link" title="spec/feature/delete_bookmark_spec.rb">spec/feature/delete_bookmark_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>7</td>
-        <td>5</td>
-        <td>5</td>
+        <td>13</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#f76d5ec0a7de007ffc5dacced5f068a2bd9bb2a7" class="src_link" title="spec/feature/update_bookmark_spec.rb">spec/feature/update_bookmark_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>21</td>
+        <td>17</td>
+        <td>17</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -111,8 +121,8 @@
     <h3>spec/bookmark_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>27</b> relevant lines. 
+      <span class="green"><b>27</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -255,40 +265,136 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;.valid?&#39; do</code>
+          <code class="ruby">  describe &#39;.delete&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;returns false if a bookmark is not valid&#39; do</code>
+          <code class="ruby">    it &#39;deletes a bookmark&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(Bookmark.valid?(&#39;This is not a valid url&#39;)).to eq(false)</code>
+          <code class="ruby">      Bookmark.delete(&#39;1&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      bookmarks = Bookmark.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      expect(bookmarks).to_not include({id: &quot;1&quot;, url: &#39;http://www.makersacademy.com&#39;, title: &#39;Makers&#39;})</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;.update&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;update a bookmark&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      Bookmark.update(&#39;2&#39;, &#39;www.google.com&#39;, &#39;NewGoogle&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      bookmarks = Bookmark.all</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(bookmarks).to include({id: &quot;2&quot;, url: &#39;www.google.com&#39;, title: &#39;NewGoogle&#39;})</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;.valid?&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;returns false if a bookmark is not valid&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Bookmark.valid?(&#39;This is not a valid url&#39;)).to eq(false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">end</code>
@@ -515,8 +621,8 @@
     <h3>spec/feature/delete_bookmark_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -533,7 +639,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  scenario &#39;User can delete a bookmark&#39; do</code>
+          <code class="ruby">  scenario &#39;There are delete buttons&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -551,7 +657,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content &#39;Delete&#39;</code>
+          <code class="ruby">    page.should have_selector(:link_or_button, &#39;Delete&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -560,7 +666,188 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;User can delete a bookmark&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">    # visit(&#39;/bookmarks&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    # expect(page.status_code).to eq(200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    # click_button(&#39;delete_1&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    # expect(page).to_not have_link(&#39;Makers&#39;, href: &#39;http://www.makersacademy.com&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f76d5ec0a7de007ffc5dacced5f068a2bd9bb2a7">
+  <div class="header">
+    <h3>spec/feature/update_bookmark_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>17</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">feature &#39;Updating bookmarks&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;There are update buttons&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit(&#39;/bookmarks&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page.status_code).to eq(200)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    page.should have_selector(:link_or_button, &#39;Update&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;User is directed to an update page when clicking on update&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit(&#39;/bookmarks&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page.status_code).to eq(200)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_selector(&#39;input[id=&quot;update_1&quot;]&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;User can update bookmark&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit(&#39;/bookmarks&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page.status_code).to eq(200)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button(&#39;update_2&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;title&#39;, with: &#39;NewGoogle&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;url&#39;, with: &#39;http://www.google.com&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button(&#39;update&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_link(&#39;NewGoogle&#39;, href: &#39;http://www.google.com&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
