@@ -6,9 +6,9 @@ describe Bookmark do
   describe '.all' do
     it 'returns all saved bookmarks' do
       bookmarks = Bookmark.all
-      expect(bookmarks).to include({url: 'http://www.makersacademy.com', title: 'Makers'})
-      expect(bookmarks).to include({url: 'http://www.destroyallsoftware.com', title: 'DestroyAllSoftware'})
-      expect(bookmarks).to include({url: 'http://www.google.com', title: 'Google'})
+      expect(bookmarks).to include({id: "1", url: 'http://www.makersacademy.com', title: 'Makers'})
+      expect(bookmarks).to include({id: "2", url: 'http://www.destroyallsoftware.com', title: 'DestroyAllSoftware'})
+      expect(bookmarks).to include({id: "3", url: 'http://www.google.com', title: 'Google'})
     end
   end
 
@@ -16,7 +16,7 @@ describe Bookmark do
     it 'saves title and url bookmark' do
       Bookmark.add('http://www.amazon.com', 'Amazon')
       bookmarks = Bookmark.all
-      expect(bookmarks).to include({url: 'http://www.amazon.com', title: 'Amazon'})
+      expect(bookmarks).to include({id: "4", url: 'http://www.amazon.com', title: 'Amazon'})
     end
   end
 

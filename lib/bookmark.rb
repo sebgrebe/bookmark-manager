@@ -10,13 +10,13 @@ class Bookmark
     end
 
     table = connection.exec('SELECT * FROM bookmarks')
-
+    p table
     # bookmarks = table.map { |row| row.values_at('url') }
     # ^returns array of arrays (which in turn contain strings):
     # [['urlname1'], ['urlname2'], ['urlname3']]
     # but what we need is something like this:
     # ['urlname1', 'urlname2', 'urlname3']:
-    table.map { |row| {url: row['url'], title: row['title'] } }
+    table.map { |row| {id: row['id'], url: row['url'], title: row['title'] } }
   end
 
   def self.add(url,title)

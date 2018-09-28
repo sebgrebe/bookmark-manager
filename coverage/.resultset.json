@@ -66,6 +66,15 @@
         null,
         null
       ],
+      "/Users/seb/makers/pairing/bookmark-manager/spec/feature/delete_bookmark_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/seb/makers/pairing/bookmark-manager/spec/feature/viewing_bookmarks_spec.rb": [
         1,
         1,
@@ -88,6 +97,6 @@
         null
       ]
     },
-    "timestamp": 1538126634
+    "timestamp": 1538128185
   }
 }
