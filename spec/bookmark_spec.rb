@@ -6,18 +6,17 @@ describe Bookmark do
   describe '.all' do
     it 'returns all saved bookmarks' do
       bookmarks = Bookmark.all
-      expect(bookmarks).to include('http://www.makersacademy.com')
-      expect(bookmarks).to include('http://www.destroyallsoftware.com')
-      expect(bookmarks).to include('http://www.google.com')
+      expect(bookmarks).to include({url: 'http://www.makersacademy.com', title: 'Makers'})
+      expect(bookmarks).to include({url: 'http://www.destroyallsoftware.com', title: 'DestroyAllSoftware'})
+      expect(bookmarks).to include({url: 'http://www.google.com', title: 'Google'})
     end
   end
 
   describe '.add' do
-    #finish writing test for adding title and url
     it 'saves title and url bookmark' do
       Bookmark.add('http://www.amazon.com', 'Amazon')
       bookmarks = Bookmark.all
-      expect(bookmarks).to include('http://www.amazon.com')
+      expect(bookmarks).to include({url: 'http://www.amazon.com', title: 'Amazon'})
     end
   end
 

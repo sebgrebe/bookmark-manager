@@ -16,7 +16,7 @@ class Bookmark
     # [['urlname1'], ['urlname2'], ['urlname3']]
     # but what we need is something like this:
     # ['urlname1', 'urlname2', 'urlname3']:
-    table.map { |row| row['url'] }
+    table.map { |row| {url: row['url'], title: row['title'] } }
   end
 
   def self.add(url,title)
@@ -25,11 +25,11 @@ class Bookmark
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}, #{title}')")
+    connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')")
   end
 
   def self.valid?(address)
     return true if (address =~ URI::regexp) == 0
-    false   
+    false
   end
 end

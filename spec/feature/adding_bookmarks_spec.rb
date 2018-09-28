@@ -6,21 +6,13 @@ describe 'Features' do
       expect(page.status_code).to eq(200)
       expect(page).to have_content 'Add title and url here:'
     end
-    scenario 'a user adds a title' do
+    scenario 'a user adds a title and url' do
       visit('/create')
       expect(page.status_code).to eq(200)
       fill_in('URL', with: 'http://www.testbookmark.com')
       fill_in('title', with: 'Testbookmark')
       click_button('Submit')
-      expect(page).to have_content 'Testbookmark'
-    end
-    scenario 'a user adds a url' do
-      visit('/create')
-      expect(page.status_code).to eq(200)
-      fill_in('URL', with: 'http://www.testbookmark.com')
-      fill_in('title', with: 'Testbookmark')
-      click_button('Submit')
-      expect(page).to have_link(nil, href: 'http://www.testbookmark.com')
+      expect(page).to have_link('Testbookmark', href: 'http://www.testbookmark.com')
     end
     scenario 'a user tries to add an invalid url and sees an error message' do
       visit('/create')

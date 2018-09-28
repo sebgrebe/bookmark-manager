@@ -11,9 +11,9 @@ describe 'Features' do
       visit('/bookmarks')
       expect(page.status_code).to eq(200)
       bookmarks = Bookmark.all
-      expect(bookmarks).to include 'http://www.makersacademy.com'
-      expect(bookmarks).to have_content 'http://www.destroyallsoftware.com'
-      expect(bookmarks).to have_content 'http://www.google.com'
+      expect(page).to have_link('Makers', href: 'http://www.makersacademy.com')
+      expect(page).to have_link('DestroyAllSoftware', href: 'http://www.destroyallsoftware.com')
+      expect(page).to have_link('Google', href: 'http://www.google.com')
     end
   end
 end

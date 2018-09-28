@@ -29,6 +29,6 @@ class BookmarkApp < Sinatra::Base
     end
     redirect '/bookmarks'
   end
-  
+
   run! if app_file == $PROGRAM_NAME
 end
